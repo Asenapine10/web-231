@@ -1,0 +1,38 @@
+<!--
+    Title: scutchfield-exercise2.html
+    Author: Alex Scutchfield
+    Date: 3/24/22
+    Description: Setting up a click listener using javascript
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript Exercise 2.2</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="global.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>Exercise 2.2 - Hello JavaScript</h1>
+            <!-- Button that when pressed will alert to the screen the course -->
+            <button type="button" class="btn-primary full-width" id="btnMyCourse">What course am I taking?</button>
+            <p id="txtMyWorld"></p>
+            <br />
+            <a href="scutchfield-exercise2.html" class="return-home">Return</a>
+            <script>
+                // Setting the name for whose world it is
+                let lastName = 'Scutchfield'
+                // Changing the paragraph to display the world ownership declaration
+                document.getElementById('txtMyWorld').innerHTML = 'This is ' + lastName + '\'s  world!';
+                // What course am I taking button function to alert to the screen
+                document.getElementById('btnMyCourse').onclick = function() {
+                    alert('WEB 231 - Enterprise JavaScript 1');
+                }
+            </script>
+        </div>
+    </body>
+
+</html>
