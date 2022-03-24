@@ -1,0 +1,69 @@
+<!--
+    Title: scutchfield-payroll.html
+    Author: Alex Scutchfield
+    Date: 3/24/22
+    Description: Variables assignment
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript assignment 2.3</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="scutchfield-payroll.css" />
+        <link rel="stylesheet" type="text/css" href="../site.css" />
+        <link rel="stylesheet" type="text/css" href="global.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 id="payroll-header">Payroll System</h1>
+            <h3>Employee record 1</h3>
+            <ul id="employeeOne">
+                <li id="txtFirstNameJohn">John</li>
+                <li id="txtLastNameDoe">Doe</li>
+                <li id="txtAddressDoe">123 apple drive</li>
+                <li id="txtHireDateDoe">1/20/2019</li>
+                <li id="txtPayRateDoe">14.2</li>
+            </ul>
+            <h3>Employee record 2</h3>
+            <ul id="employeeTwo">
+                <li id="txtFirstNameDavid">David</li>
+                <li id="txtLastNameBowing">Bowing</li>
+                <li id="txtAddressBowing">123 apple drive</li>
+                <li id="txtHireDateBowing">5/15/2019</li>
+                <li id="txtPayRateBowing">22.5</li>
+            </ul>
+            <h3>Employee record 3</h3>
+            <ul id="employeeThree">
+                <li id="txtFirstNameBill">Bill</li>
+                <li id="txtLastNameFarquar">Farquar</li>
+                <li id="txtAddressFarquar">123 apple drive</li>
+                <li id="txtHireDateFarquar">9/1/2015</li>
+                <li id="txtPayRateFarquar">27.3</li>
+            </ul>
+
+            <a id="return-home" href="../index.html">Return</a>
+
+            <script>
+                let empOneFirstName = document.getElementById("txtFirstNameJohn").innerHTML;
+                let empTwoFirstName = document.getElementById("txtFirstNameDavid").innerHTML;
+                let empThreeFirstName = document.getElementById("txtFirstNameBill").innerHTML;
+                let empOneLastName = document.getElementById("txtLastNameDoe").innerHTML;
+                let empTwoLastName = document.getElementById("txtLastNameBowing").innerHTML;
+                let empThreeLastName = document.getElementById("txtLastNameFarquar").innerHTML;
+                let empOneAddress = document.getElementById("txtAddressDoe").innerHTML;
+                let empTwoAddress = document.getElementById("txtAddressBowing").innerHTML;
+                let empThreeAddress = document.getElementById("txtAddressFarquar").innerHTML;
+                let empOneHireDate = document.getElementById("txtHireDateDoe").innerHTML;
+                let empTwoHireDate = document.getElementById("txtHireDateBowing").innerHTML;
+                let empThreeHireDate = document.getElementById("txtHireDateFarquar").innerHTML;
+                let empOnePayRate = document.getElementById("txtPayRateDoe").innerHTML.toFixed(1);
+                let empTwoPayRate = document.getElementById("txtPayRateBowing").innerHTML.toFixed(1);
+                let empThreePayRate = document.getElementById("txtPayRateFarquar").innerHTML.toFixed(1);
+            </script>
+
+        </div>
+    </body>
+</html>
