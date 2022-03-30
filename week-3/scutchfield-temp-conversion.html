@@ -1,0 +1,48 @@
+<!--
+    Title: scutchfield-temp-conversion.html
+    Author: Alex Scutchfield
+    Date: 3/30/22
+    Description: 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript Exercise 3.2</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../week-2/global.css" />
+        <link rel="stylesheet" type="text/css" href="scutchfield-temp-conversion.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+            <h2 class="card-title">Fahrenheit to Celsius Converter</h2>
+            <div class="card-content">
+                <form>
+                    <label for="temp">Fahrenheit value: </label>
+                    <input type="text" id="txtFahrenheit" name="temp"><br /><br />
+                    <input type="button" value="Convert Temperature" id="convertButton">
+                </form>
+
+            </div>
+            <hr />
+
+            <h2 class="card-title">Conversion Results</h2>
+            <div class="card-content" id="conversionResults"></div>
+
+            <hr />
+            <a href="../index.html" class="return-home">Return</a>
+        </div>
+
+        <script>
+            document.getElementById('convertButton').onclick = function() {
+                let fahrenheit = document.getElementById('txtFahrenheit').value;
+                document.getElementById('conversionResults').innerHTML = ((parseFloat(fahrenheit) - 32)/1.8).toFixed(2);
+            }
+        </script>
+
+    </body>
+
+</html>
