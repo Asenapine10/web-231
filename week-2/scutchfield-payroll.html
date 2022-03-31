@@ -11,7 +11,9 @@
         <title>WEB 231 - Enterprise JavaScript assignment 2.3</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="scutchfield-payroll.css" />
+        <!-- Link to the site wide css sheet -->
         <link rel="stylesheet" type="text/css" href="../site.css" />
+        <!-- Link to the CSS sheet that sets the home link style -->
         <link rel="stylesheet" type="text/css" href="global.css" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
     </head>
@@ -19,49 +21,71 @@
     <body>
         <div id="container">
             <h1 id="payroll-header">Payroll System</h1>
+            <!-- Each employee record set up as blank, to be set by JS code on window load -->
             <h3>Employee record 1</h3>
             <ul id="employeeOne">
-                <li id="txtFirstNameJohn">John</li>
-                <li id="txtLastNameDoe">Doe</li>
-                <li id="txtAddressDoe">123 apple drive</li>
-                <li id="txtHireDateDoe">1/20/2019</li>
-                <li id="txtPayRateDoe">14.2</li>
+                <li id="txtFirstNameJohn"></li>
+                <li id="txtLastNameDoe"></li>
+                <li id="txtAddressDoe"></li>
+                <li id="txtHireDateDoe"></li>
+                <li id="txtPayRateDoe"></li>
             </ul>
             <h3>Employee record 2</h3>
             <ul id="employeeTwo">
-                <li id="txtFirstNameDavid">David</li>
-                <li id="txtLastNameBowing">Bowing</li>
-                <li id="txtAddressBowing">123 apple drive</li>
-                <li id="txtHireDateBowing">5/15/2019</li>
-                <li id="txtPayRateBowing">22.5</li>
+                <li id="txtFirstNameDavid"></li>
+                <li id="txtLastNameBowing"></li>
+                <li id="txtAddressBowing"></li>
+                <li id="txtHireDateBowing"></li>
+                <li id="txtPayRateBowing"></li>
             </ul>
             <h3>Employee record 3</h3>
             <ul id="employeeThree">
-                <li id="txtFirstNameBill">Bill</li>
-                <li id="txtLastNameFarquar">Farquar</li>
-                <li id="txtAddressFarquar">123 apple drive</li>
-                <li id="txtHireDateFarquar">9/1/2015</li>
-                <li id="txtPayRateFarquar">27.3</li>
+                <li id="txtFirstNameBill"></li>
+                <li id="txtLastNameFarquar"></li>
+                <li id="txtAddressFarquar"></li>
+                <li id="txtHireDateFarquar"></li>
+                <li id="txtPayRateFarquar"></li>
             </ul>
 
             <a class="return-home" href="../index.html">Return</a>
 
             <script>
-                let empOneFirstName = document.getElementById("txtFirstNameJohn").innerHTML;
-                let empTwoFirstName = document.getElementById("txtFirstNameDavid").innerHTML;
-                let empThreeFirstName = document.getElementById("txtFirstNameBill").innerHTML;
-                let empOneLastName = document.getElementById("txtLastNameDoe").innerHTML;
-                let empTwoLastName = document.getElementById("txtLastNameBowing").innerHTML;
-                let empThreeLastName = document.getElementById("txtLastNameFarquar").innerHTML;
-                let empOneAddress = document.getElementById("txtAddressDoe").innerHTML;
-                let empTwoAddress = document.getElementById("txtAddressBowing").innerHTML;
-                let empThreeAddress = document.getElementById("txtAddressFarquar").innerHTML;
-                let empOneHireDate = document.getElementById("txtHireDateDoe").innerHTML;
-                let empTwoHireDate = document.getElementById("txtHireDateBowing").innerHTML;
-                let empThreeHireDate = document.getElementById("txtHireDateFarquar").innerHTML;
-                let empOnePayRate = document.getElementById("txtPayRateDoe").innerHTML.toFixed(1);
-                let empTwoPayRate = document.getElementById("txtPayRateBowing").innerHTML.toFixed(1);
-                let empThreePayRate = document.getElementById("txtPayRateFarquar").innerHTML.toFixed(1);
+                // on window load each employee data variable is set
+                window.onload = function() {
+                    const empOneFirstName = 'John';
+                    const empTwoFirstName = 'David';
+                    const empThreeFirstName = 'Bill';
+                    const empOneLastName = 'Doe';
+                    const empTwoLastName = 'Bowing';
+                    const empThreeLastName = 'Farquar';
+                    const empOneAddress = '123 Apple Drive';
+                    const empTwoAddress = '4792 Jester Ave';
+                    const empThreeAddress = '940 SW 9th St';
+                    const empOneHireDate = new Date(2019, 4, 1);
+                    const empTwoHireDate = new Date(2015, 6, 10);
+                    const empThreeHireDate = new Date(2015, 9, 15);
+                    const empOnePayRate = 14.2;
+                    const empTwoPayRate = 22.5;
+                    const empThreePayRate = 27.3;
+
+
+                    // Each bit of record data's innerHTML is set her based off of the previously set values
+                    document.getElementById("txtFirstNameJohn").innerHTML = empOneFirstName;
+                    document.getElementById("txtFirstNameDavid").innerHTML = empTwoFirstName;
+                    document.getElementById("txtFirstNameBill").innerHTML = empThreeFirstName;
+                    document.getElementById("txtLastNameDoe").innerHTML = empOneLastName;
+                    document.getElementById("txtLastNameBowing").innerHTML = empTwoLastName;
+                    document.getElementById("txtLastNameFarquar").innerHTML = empThreeLastName;
+                    document.getElementById("txtAddressDoe").innerHTML = empOneAddress;
+                    document.getElementById("txtAddressBowing").innerHTML = empTwoAddress;
+                    document.getElementById("txtAddressFarquar").innerHTML = empThreeAddress;
+                    document.getElementById("txtHireDateDoe").innerHTML = empOneHireDate.toLocaleDateString('en-US');
+                    document.getElementById("txtHireDateBowing").innerHTML = empTwoHireDate.toLocaleDateString('en-US');
+                    document.getElementById("txtHireDateFarquar").innerHTML = empThreeHireDate.toLocaleDateString('en-US');
+                    document.getElementById("txtPayRateDoe").innerHTML = empOnePayRate.toFixed(1);
+                    document.getElementById("txtPayRateBowing").innerHTML = empTwoPayRate.toFixed(1);
+                    document.getElementById("txtPayRateFarquar").innerHTML = empThreePayRate.toFixed(1);
+                };
             </script>
 
         </div>
