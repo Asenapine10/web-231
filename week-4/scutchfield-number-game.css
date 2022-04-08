@@ -1,0 +1,48 @@
+/* 
+    Title: scutchfield-number-game.css
+    Author: Alex Scutchfield
+    Date: 4/8/22
+    Description: Styling the number game
+*/
+
+#container {
+    padding-left: 5%;
+}
+
+.app-header {
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+    color: #453674;
+}
+
+.card-content {
+    text-align: center;
+}
+
+#convertButton {
+    width: 10%;
+    height: 10%;
+    text-align: center;
+    font-size: large;
+    background-color: #3C275A;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+.return-home {
+    color: #4F3674;
+    text-decoration: none;
+}
+
+.return-home:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+}
+
+.return-home:visited {
+    color: #3C275A;
+}

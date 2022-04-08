@@ -1,0 +1,66 @@
+<!--
+    Title: scutchfield-number-game.html
+    Author: Alex Scutchfield
+    Date: 4/8/22
+    Description: Random number guesser game
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript Exercise 4.2</title>
+        <meta charset="UTF-8">
+        <!-- Adding the stylesheet that sets the style for the rest of the page -->
+        <link rel="stylesheet" type="text/css" href="scutchfield-number-game.css" />
+        <!-- Adding fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the numbers game!</h1>
+            <h2 class="card-title">Pick a number between 1 and 10</h2>
+            <div class="card-content">
+                <!-- Form that asks for a number and has a text box and button associated with it -->
+                <form>
+                    <label for="temp">Guess the number: </label>
+                    <input type="text" id="txtMyNumber" name="temp"><br /><br />
+                    <input type="button" value="Submit" id="btnSubmit">
+                </form>
+
+            </div>
+            <hr />
+
+            <h2 class="card-title">Results</h2>
+            <!-- The results of the random number guess will be  displayed here once the user clicks the button with id "btnSubmit" -->
+            <div class="card-content" id="guessResults"></div>
+
+            <hr />
+            <a href="../index.html" class="return-home">Return</a>
+        </div>
+
+        <script>
+            // Setting the random number on page load
+            window.onload = function() {
+                rnd = Math.floor((Math.random() * 10) + 1); // generate a random number between 1 and 10
+            }
+            // Binding a function to occur when the btnSubmit button is clicked
+            document.getElementById('btnSubmit').onclick = function() {
+                // Determining what value the user put into the open text box
+                let myNumber = document.getElementById('txtMyNumber').value;
+                // Series of if / else statements to determine what to print to the screen based on rnd compared to myNumber
+                if(rnd < myNumber) {
+                    document.getElementById('guessResults').innerHTML = "The number is less than " + myNumber;
+                }
+                else if(rnd > myNumber) {
+                    document.getElementById('guessResults').innerHTML = "The number is greater than " + myNumber;
+                }
+                else {
+                    document.getElementById('guessResults').innerHTML = "Congratulations! You picked the correct number!";
+                }
+            }
+        </script>
+
+    </body>
+
+</html>
