@@ -18,3 +18,15 @@
 .return-home:visited {
     color: #3C275A;
 }
+
+.app-header {
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
+    color: #453674;
+}
+
+.card-content {
+}

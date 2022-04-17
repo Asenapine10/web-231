@@ -1,0 +1,22 @@
+/* 
+    Title: scutchfield-sequence-game.css
+    Author: Alex Scutchfield
+    Date: 4/17/22
+    Description: Styling the Sequence Game
+*/
+
+
+html {
+    font-family: Oswald, Verdana, Arial, san-serif;
+  }
+  
+  #container {
+    width: 600px;
+    margin: auto;
+  }
+  
+  #btnDisplaySequence {
+    width: 100%;
+    border-radius: 5px;
+  }
+

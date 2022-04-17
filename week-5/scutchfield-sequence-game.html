@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!--
+    Title: scutchfield-sequence-game.html
+    Author: Alex Scutchfield
+    Date: 4/17/22
+    Description: Sequence Game
+-->
+
+
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript Exercise 4.2</title>
+        <meta charset="UTF-8">
+        <!-- Adding the stylesheet that sets the style for the rest of the page -->
+        <link rel="stylesheet" type="text/css" href="scutchfield-sequence-game.css" />
+        <link rel="stylesheet" type="text/css" href="../global.css" />
+        <!-- Adding fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the sequence game!</h1>
+            <!-- The following card contains the number sequence selection as well as the number sequence button -->
+            <div class="card">
+                <div class="card-title">
+                    Sequence Selection Form
+                </div>
+                <div class="card-content">
+                    <div class="form">
+                        <!-- Number sequence selection -->
+                        <div class="form-field">
+                            <label for="sequence">Choose a number sequence: </label>
+                            <select name="sequence" id="sequence" class="drop-down-menu">
+                                <option value="select">--Select--</option>
+                                <option value="fibonacci">Fibonacci Sequence</option>
+                                <option value="even">Even Numbers</option>
+                                <option value="odd">Odd Numbers</option>
+                            </select>
+                        </div>
+                        <!-- Button with id btnDisplaySequence that will display the associated sequence -->
+                        <div class="form-field">
+                            <button id="btnDisplaySequence" class="btn btn-primary">Display Sequence</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- The following card contains all of the results -->
+            <div class="card">
+                <div class="card-title">
+                    Sequence Results
+                </div>
+                <div class="card-content" id="sequenceResults"></div>
+            </div>
+            
+            <a href="../index.html" class="return-home">Return</a>
+
+        </div>
+
+        <script>
+            // The following block occurs when the display sequence button ID btnDisplaySequence is clicked
+            document.getElementById('btnDisplaySequence').onclick = function() {
+                let choice = document.getElementById('sequence').value;
+                // If the user selected fibonacci as the sequence
+                if(choice == 'fibonacci') {
+                    let output = "";
+                    let current = 0;
+                    let ticker = 0;
+                    let last = 0;
+                    let go = true;
+                    // As soon as the loop finds a fibonacci number that is higher than 40 it kills the loop by setting go to be false, all others are added to output
+                    while(go) {
+                        current = last + ticker;
+                        last = current;
+                        ticker = ticker + 1;
+                        if (current > 40) {
+                            go = false;
+                        }
+                        else {
+                            output = output + "" + current + ", ";
+                        }
+                    }
+                    document.getElementById('sequenceResults').innerHTML = output.slice(0,-2);
+                }
+                // If the user selected even as the sequence
+                else if(choice == 'even') {
+                    let evenCounter = 2;
+                    let evenOutput = "";
+                    while (evenCounter < 20) {
+                        evenOutput = evenOutput + "" + evenCounter + ", ";
+                        evenCounter = evenCounter + 2;
+                    }
+                    document.getElementById('sequenceResults').innerHTML = evenOutput.slice(0,-2);
+                }
+                // If the user selected odd as the sequence
+                else if(choice == 'odd') {
+                    let oddCounter = 1;
+                    let oddOutput = "";
+                    while (oddCounter < 20) {
+                        oddOutput = oddOutput + "" + oddCounter + ", ";
+                        oddCounter = oddCounter + 2;
+                    }
+                    document.getElementById('sequenceResults').innerHTML = oddOutput.slice(0,-2);
+                }
+                // If the user did not select a sequence
+                else {
+                    alert("Invalid selection, please try again!");
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
