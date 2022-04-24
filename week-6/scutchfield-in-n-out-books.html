@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<!--
+    Title: scutchfield-in-n-out-books.html
+    Author: Alex Scutchfield
+    Date: 4/24/22
+    Description: In-n-out-books selection of favorite books / authors
+-->
+
+
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript Exercise 4.2</title>
+        <meta charset="UTF-8">
+        <!-- Adding the stylesheet that sets the style for the rest of the page -->
+        <link rel="stylesheet" type="text/css" href="scutchfield-in-n-out-books.css" />
+        <link rel="stylesheet" type="text/css" href="../global.css" />
+        <!-- Adding fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+            <!-- The following card contains the selector for books vs. authors as well as the display button -->
+            <div class="card">
+                <div class="card-title">
+                    My Favorites
+                </div>
+                <div class="card-content">
+                    <div class="form">
+                        <!-- Books vs. Authors selection -->
+                        <div class="form-field">
+                            <label for="favoriteList">Choose a listing: </label>
+                            <select name="favoriteList" id="favoriteList" class="drop-down-menu">
+                                <option value="select">--Select--</option>
+                                <option value="books">Top 3 Favorite Books</option>
+                                <option value="authors">Top 3 Favorite Authors</option>
+                            </select>
+                        </div>
+                        <!-- Button with id btnDisplayListing that will display the associated sequence -->
+                        <div class="form-field">
+                            <button id="btnDisplayListing" class="btn btn-primary">Display Listing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="../index.html" class="return-home">Return</a>
+
+            <div class="card" id="favorite-books">
+                <div class="card-title" id="booksTitle">Top 3 Favorite Books</div>
+                <div class="card-content" id="bookTable">
+
+                    <table>
+                        <tr>
+                            <th>ISBN</th>
+                            <th>Title</th>
+                            <th>Pages</th>
+                        </tr>
+                        <tr>
+                            <td id="txt1984ISBN"></td>
+                            <td id="txt1984Title"></td>
+                            <td id="txt1984Pages"></td>
+                        </tr>
+                        <tr>
+                            <td id="txtCharlottesWebISBN"></td>
+                            <td id="txtCharlottesWebTitle"></td>
+                            <td id="txtCharlottesWebPages"></td>
+                        </tr>
+                        <tr>
+                            <td id="txtHarryPotterISBN"></td>
+                            <td id="txtHarryPotterTitle"></td>
+                            <td id="txtHarryPotterPages"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="card" id="favorite-authors">
+                <div class="card-title" id="authorsTitle">Top 3 Favorite Authors</div>
+                <div class="card-content" id="authorTable">
+
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Genre</th>
+                        </tr>
+                        <tr>
+                            <td id="txtJRRTolkienName"></td>
+                            <td id="txtJRRTolkienGenre"></td>
+                        </tr>
+                        <tr>
+                            <td id="txtGeorgeOrwellName"></td>
+                            <td id="txtGeorgeOrwellGenre"></td>
+                        </tr>
+                        <tr>
+                            <td id="txtStephenKingName"></td>
+                            <td id="txtStephenKingGenre"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+
+            let book1 = {
+                isbn: '9780451524935',
+                title: '1984',
+                pages: '328'
+            };
+            let book2 = {
+                isbn: '9780064410939',
+                title: 'Charlotte\'s Web',
+                pages: '192'
+            };
+            let book3 = {
+                isbn: '9780439708180',
+                title: 'Harry Potter and the Sorcerer\s Stone',
+                pages: '309'
+            };
+            let author1 = {
+                name: 'J. R. R. Tolkien',
+                genre: 'High Fantasy'
+            };
+            let author2 = {
+                name: 'George Orwell',
+                genre: 'Dystopia'
+            };
+            let author3 = {
+                name: 'Stephen King',
+                genre: 'Horror Fantasy'
+            };
+
+            document.getElementById('txt1984ISBN').innerHTML = book1.isbn;
+            document.getElementById('txt1984Title').innerHTML = book1.title;
+            document.getElementById('txt1984Pages').innerHTML = book1.pages;
+            document.getElementById('txtCharlottesWebISBN').innerHTML = book2.isbn;
+            document.getElementById('txtCharlottesWebTitle').innerHTML = book2.title;
+            document.getElementById('txtCharlottesWebPages').innerHTML = book2.pages;
+            document.getElementById('txtHarryPotterISBN').innerHTML = book3.isbn;
+            document.getElementById('txtHarryPotterTitle').innerHTML = book3.title;
+            document.getElementById('txtHarryPotterPages').innerHTML = book3.pages;
+            document.getElementById('txtJRRTolkienName').innerHTML = author1.name;
+            document.getElementById('txtJRRTolkienGenre').innerHTML = author1.genre;
+            document.getElementById('txtGeorgeOrwellName').innerHTML = author2.name;
+            document.getElementById('txtGeorgeOrwellGenre').innerHTML = author2.genre;
+            document.getElementById('txtStephenKingName').innerHTML = author3.name;
+            document.getElementById('txtStephenKingGenre').innerHTML = author3.genre;
+
+            let books = document.getElementById('favorite-books');
+            let authors = document.getElementById('favorite-authors');
+            books.style.display='none';
+            authors.style.display='none';
+
+            // The following block occurs when the display sequence button ID btnDisplaySequence is clicked
+            document.getElementById('btnDisplayListing').onclick = function() {
+                let choice = document.getElementById('favoriteList').value;
+                // If the user selected books as the listing
+                if(choice == 'books') {
+                    books.style.display='block';
+                    authors.style.display='none';
+                    }
+                // If the user selected authors as the listing
+                else if(choice == 'authors') {
+                    authors.style.display='block';
+                    books.style.display='none';
+                }
+                // If the user did not select a sequence
+                else {
+                    alert("Invalid selection, please try again!");
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
