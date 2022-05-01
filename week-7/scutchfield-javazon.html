@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<!--
+    Title: scutchfield-javazon.html
+    Author: Alex Scutchfield
+    Date: 4/24/22
+    Description: Class practice, selecting products, services, or employees
+-->
+
+
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript Exercise 4.2</title>
+        <meta charset="UTF-8">
+        <!-- Adding the stylesheet that sets the style for the rest of the page -->
+        <link rel="stylesheet" type="text/css" href="scutchfield-javazon.css" />
+        <link rel="stylesheet" type="text/css" href="../global.css" />
+        <!-- Adding fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the Javazon app!</h1>
+            <!-- The following card contains the selector for products, services, or employees as well as the display button -->
+            <div class="card">
+                <div class="card-title">
+                    Javazon Selection Form
+                </div>
+                <div class="card-content">
+                    <div class="form">
+                        <!-- products, services, or employees selection -->
+                        <div class="form-field">
+                            <label for="listing">Choose a listing </label>
+                            <select name="listing" id="listing" class="drop-down-menu">
+                                <option value="select">--Select--</option>
+                                <option value="products">Products</option>
+                                <option value="services">Services</option>
+                                <option value="employees">Employees</option>
+                            </select>
+                        </div>
+                        <!-- Button with id btnDisplayListing that will display the associated sequence -->
+                        <div class="form-field">
+                            <button id="btnDisplayListing" class="btn btn-primary">Display Listing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="../index.html" class="return-home">Return</a>
+            <!-- Products selection -->
+            <div class="card" id="products">
+                <div class="card-title" id="productsTitle">Javazon Products</div>
+                <div class="card-content" id="productsTable">
+
+                    <table>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total Value</th>
+                        </tr>
+                        <tr>
+                            <td id="product1ID"></td>
+                            <td id="product1Description"></td>
+                            <td id="product1Price"></td>
+                            <td id="product1Quantity"></td>
+                            <td id="product1Total"></td>
+                        </tr>
+                        <tr>
+                            <td id="product2ID"></td>
+                            <td id="product2Description"></td>
+                            <td id="product2Price"></td>
+                            <td id="product2Quantity"></td>
+                            <td id="product2Total"></td>
+                        </tr>
+                        <tr>
+                            <td id="product3ID"></td>
+                            <td id="product3Description"></td>
+                            <td id="product3Price"></td>
+                            <td id="product3Quantity"></td>
+                            <td id="product3Total"></td>
+                        </tr>
+                        <tr>
+                            <td id="product4ID"></td>
+                            <td id="product4Description"></td>
+                            <td id="product4Price"></td>
+                            <td id="product4Quantity"></td>
+                            <td id="product4Total"></td>
+                        </tr>
+                        <tr>
+                            <td id="product5ID"></td>
+                            <td id="product5Description"></td>
+                            <td id="product5Price"></td>
+                            <td id="product5Quantity"></td>
+                            <td id="product5Total"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <!-- Services selection -->
+            <div class="card" id="services">
+                <div class="card-title" id="ServicesTitle">Javazon Services</div>
+                <div class="card-content" id="servicesTable">
+
+                    <table>
+                        <tr>
+                            <th>Service ID</th>
+                            <th>Description</th>
+                            <th>Hourly Rate</th>
+                            <th>Minimum Billable hours</th>
+                        </tr>
+                        <tr>
+                            <td id="service1ID"></td>
+                            <td id="service1Description"></td>
+                            <td id="service1Rate"></td>
+                            <td id="service1Min"></td>
+                        </tr>
+                        <tr>
+                            <td id="service2ID"></td>
+                            <td id="service2Description"></td>
+                            <td id="service2Rate"></td>
+                            <td id="service2Min"></td>
+                        </tr>
+                        <tr>
+                            <td id="service3ID"></td>
+                            <td id="service3Description"></td>
+                            <td id="service3Rate"></td>
+                            <td id="service3Min"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <!-- Employees selection -->
+            <div class="card" id="employees">
+                <div class="card-title" id="employeesTitle">Javazon Employees</div>
+                <div class="card-content" id="employeesTable">
+
+                    <table>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Salary</th>
+                        </tr>
+                        <tr>
+                            <td id="employee1ID"></td>
+                            <td id="employee1Last"></td>
+                            <td id="employee1First"></td>
+                            <td id="employee1Salary"></td>
+                        </tr>
+                        <tr>
+                            <td id="employee2ID"></td>
+                            <td id="employee2Last"></td>
+                            <td id="employee2First"></td>
+                            <td id="employee2Salary"></td>
+                        </tr><tr>
+                            <td id="employee3ID"></td>
+                            <td id="employee3Last"></td>
+                            <td id="employee3First"></td>
+                            <td id="employee3Salary"></td>
+                        </tr><tr>
+                            <td id="employee4ID"></td>
+                            <td id="employee4Last"></td>
+                            <td id="employee4First"></td>
+                            <td id="employee4Salary"></td>
+                        </tr><tr>
+                            <td id="employee5ID"></td>
+                            <td id="employee5Last"></td>
+                            <td id="employee5First"></td>
+                            <td id="employee5Salary"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            
+            
+
+        </div>
+
+        <script>
+            // Create each class to be used
+            class Product {
+                constructor(id, description, price, quantity) {
+                    this.id = id;
+                    this.description = description;
+                    this.price = price.toFixed(2);
+                    this.quantity = quantity;
+                    this.totalValue = (price*quantity).toFixed(2);
+                }
+            }
+
+            class Service {
+                constructor(id, description, hourlyRate, min) {
+                    this.id = id;
+                    this.description = description;
+                    this.hourlyRate = hourlyRate.toFixed(2);
+                    this.min = min;
+                }
+            }
+
+            class Employee {
+                constructor(id, firstName, lastName, salary) {
+                    this.id = id;
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.salary = salary.toFixed(2);
+                }
+            }
+            // Create each product, service, and employee with their respective info
+            let product1 = new Product(9781118008188, 'HTML and CSS: Design and Build Websites', 22.26, 10);
+            let product2 = new Product(9781491952023, 'JavaScript: The Definitive Guide 7/E', 41.33, 7);
+            let product3 = new Product(9781449331818, 'Learning JavaScript Design Patterns 1/E', 25.99, 3);
+            let product4 = new Product(9781617292422, 'Express in Action: Writing, building, and testing Node.js applications 1/E', 34.91, 3);
+            let product5 = new Product(9781491954461, 'MongoDB the Definitive Guide', 33.7, 8);
+
+            let service1 = new Service(100, 'Website Design', 150, 25);
+            let service2 = new Service(101, 'DevOps Consulting', 125, 50);
+            let service3 = new Service(102, 'Database Design', 125, 15);
+
+            let employee1 = new Employee(1007, 'Beethoven', 'Ludwig', 13.99);
+            let employee2 = new Employee(1008, 'Bach', 'Johann', 22.3);
+            let employee3 = new Employee(1009, 'Mozart', 'Wolfgang', 19.5);
+            let employee4 = new Employee(1010, 'Brahms', 'Johannes', 12);
+            let employee5 = new Employee(1011, 'Haydn', 'Joseph', 32.5);
+            // Set all of the product, service, and employee table data
+            document.getElementById('product1ID').innerHTML = product1.id;
+            document.getElementById('product1Description').innerHTML = product1.description;
+            document.getElementById('product1Price').innerHTML = product1.price;
+            document.getElementById('product1Quantity').innerHTML = product1.quantity;
+            document.getElementById('product1Total').innerHTML = product1.totalValue;
+
+            document.getElementById('product2ID').innerHTML = product2.id;
+            document.getElementById('product2Description').innerHTML = product2.description;
+            document.getElementById('product2Price').innerHTML = product2.price;
+            document.getElementById('product2Quantity').innerHTML = product2.quantity;
+            document.getElementById('product2Total').innerHTML = product2.totalValue;
+
+            document.getElementById('product3ID').innerHTML = product3.id;
+            document.getElementById('product3Description').innerHTML = product3.description;
+            document.getElementById('product3Price').innerHTML = product3.price;
+            document.getElementById('product3Quantity').innerHTML = product3.quantity;
+            document.getElementById('product3Total').innerHTML = product3.totalValue;
+
+            document.getElementById('product4ID').innerHTML = product4.id;
+            document.getElementById('product4Description').innerHTML = product4.description;
+            document.getElementById('product4Price').innerHTML = product4.price;
+            document.getElementById('product4Quantity').innerHTML = product4.quantity;
+            document.getElementById('product4Total').innerHTML = product4.totalValue;
+
+            document.getElementById('product5ID').innerHTML = product5.id;
+            document.getElementById('product5Description').innerHTML = product5.description;
+            document.getElementById('product5Price').innerHTML = product5.price;
+            document.getElementById('product5Quantity').innerHTML = product5.quantity;
+            document.getElementById('product5Total').innerHTML = product5.totalValue;
+
+            document.getElementById('service1ID').innerHTML = service1.id;
+            document.getElementById('service1Description').innerHTML = service1.description;
+            document.getElementById('service1Rate').innerHTML = service1.hourlyRate;
+            document.getElementById('service1Min').innerHTML = service1.min;
+
+            document.getElementById('service2ID').innerHTML = service2.id;
+            document.getElementById('service2Description').innerHTML = service2.description;
+            document.getElementById('service2Rate').innerHTML = service2.hourlyRate;
+            document.getElementById('service2Min').innerHTML = service2.min;
+
+            document.getElementById('service3ID').innerHTML = service3.id;
+            document.getElementById('service3Description').innerHTML = service3.description;
+            document.getElementById('service3Rate').innerHTML = service3.hourlyRate;
+            document.getElementById('service3Min').innerHTML = service3.min;
+
+            document.getElementById('employee1ID').innerHTML = employee1.id;
+            document.getElementById('employee1Last').innerHTML = employee1.lastName;
+            document.getElementById('employee1First').innerHTML = employee1.firstName;
+            document.getElementById('employee1Salary').innerHTML = employee1.salary;
+
+            document.getElementById('employee2ID').innerHTML = employee2.id;
+            document.getElementById('employee2Last').innerHTML = employee2.lastName;
+            document.getElementById('employee2First').innerHTML = employee2.firstName;
+            document.getElementById('employee2Salary').innerHTML = employee2.salary;
+
+            document.getElementById('employee3ID').innerHTML = employee3.id;
+            document.getElementById('employee3Last').innerHTML = employee3.lastName;
+            document.getElementById('employee3First').innerHTML = employee3.firstName;
+            document.getElementById('employee3Salary').innerHTML = employee3.salary;
+
+            document.getElementById('employee4ID').innerHTML = employee4.id;
+            document.getElementById('employee4Last').innerHTML = employee4.lastName;
+            document.getElementById('employee4First').innerHTML = employee4.firstName;
+            document.getElementById('employee4Salary').innerHTML = employee4.salary;
+
+            document.getElementById('employee5ID').innerHTML = employee5.id;
+            document.getElementById('employee5Last').innerHTML = employee5.lastName;
+            document.getElementById('employee5First').innerHTML = employee5.firstName;
+            document.getElementById('employee5Salary').innerHTML = employee5.salary;
+
+            let products = document.getElementById('products');
+            let services = document.getElementById('services');
+            let employees = document.getElementById('employees');
+
+            products.style.display='none';
+            services.style.display='none';
+            employees.style.display='none';
+
+            // The following block occurs when the display sequence button ID btnDisplayListing is clicked
+            document.getElementById('btnDisplayListing').onclick = function() {
+                let choice = document.getElementById('listing').value;
+                // choice switch to display the correct table
+                switch (choice) {
+                    case 'products':
+                        products.style.display='block';
+                        services.style.display='none';
+                        employees.style.display='none';
+                        break;
+                    case 'services':
+                        products.style.display='none';
+                        services.style.display='block';
+                        employees.style.display='none';
+                        break;
+                    case 'employees':
+                        products.style.display='none';
+                        services.style.display='none';
+                        employees.style.display='block';
+                        break;
+                    default: 
+                        alert('Invalid selection, please try again!');
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
