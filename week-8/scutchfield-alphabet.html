@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<!--
+    Title: scutchfield-alphabet.html
+    Author: Alex Scutchfield
+    Date: 5/8/22
+    Description: Class practice, selecting products, services, or employees
+-->
+
+
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript Exercise 8.2</title>
+        <meta charset="UTF-8">
+        <!-- Adding the stylesheet that sets the style for the rest of the page -->
+        <link rel="stylesheet" type="text/css" href="scutchfield-alphabet.css" />
+        <link rel="stylesheet" type="text/css" href="../global.css" />
+        <!-- Adding fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the alphabet game!</h1>
+            <!-- The following card contains the input box for the alphabet selection -->
+            <div class="card">
+                <div class="card-title">
+                    Alphabet Number Form
+                </div>
+                <div class="card-content">
+                    <div class="form">
+                        <!-- alphabet selection selection -->
+                        <div class="form-field">
+                            <label for="alphabetEntry">Alphabet letter position </label>
+                            <input type="text" name="alphabetEntry" id="alphabetEntry" />
+                        </div>
+                        <!-- Button with id btnDisplayAlphabet that will display the associated letter -->
+                        <div class="form-field">
+                            <button id="btnDisplayAlphabet" class="btn btn-primary">Find Letter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="../index.html" class="return-home">Return</a>
+            <!-- Display for full alphabet -->
+            <div class="card" id="alphabet">
+                <div class="card-title" id="alphabetTitle">Letters in the alphabet</div>
+                <div class="card-content" id="alphabetContent">
+
+                </div>
+            </div>
+            <div class="card" id="results">
+                <div class="card-title" id="resultsTitle">
+                    Results
+                </div>
+                <div class="card-content" id="resultsContent">
+
+                </div>
+            </div>
+        
+
+            
+            
+
+        </div>
+
+        <script>
+            // Creating the full alphabet and displaying it
+            let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+            let fullAlphabet = "";
+            for (const letter of alphabet) {
+                fullAlphabet = fullAlphabet + "" + letter.toUpperCase() + ", ";
+            }
+            document.getElementById('alphabetContent').innerHTML = fullAlphabet
+            // The following block occurs when the display sequence button ID btnDisplayAlphabet is clicked and sets the results content
+            document.getElementById('btnDisplayAlphabet').onclick = function() {
+                let resultsContent = document.getElementById('resultsContent');
+                let number = document.getElementById('alphabetEntry').value;
+                // choice switch to display the correct table
+                if (number > alphabet.length) {
+                    resultsContent.innerHTML = 'There are not ' + number + ' letters in the alphabet';
+                }
+                else if (number > 0) {
+                    resultsContent.innerHTML = '' + alphabet[number-1].toUpperCase() + ' is at position ' + number + ' in the alphabet.';
+                }
+                else {
+                    resultsContent.innerHTML = 'You must enter a number between 1 and 26';
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
