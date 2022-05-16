@@ -1,0 +1,68 @@
+/* 
+    Title: scutchfield-card-game.css
+    Author: Alex Scutchfield
+    Date: 5/15/22
+    Description: Styling the Card Game
+*/
+
+
+html {
+    font-family: Oswald, Verdana, Arial, san-serif;
+  }
+  
+  #container {
+    width: 600px;
+    margin: auto;
+  }
+  
+  #btnShuffle {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: white;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
+  }
+
+  td {
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
+  }
+
+  tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+  }
+
+  .card {
+    width: 600px;
+    margin: 8% auto 0;
+    text-align: center;
+  }
+
+  #cardsContent {
+    display: grid;
+    grid-template-rows: 13;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 0 10px 10px 10px;
+  }
+
+  .player-card {
+    width: 100%;
+  }
